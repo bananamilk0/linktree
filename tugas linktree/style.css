@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body{
+    background: url('nature.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .wrapper,
+  .wrapper .img-area,
+  .social-icons a,
+  .buttons button{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(./bgif.gif);
+    box-shadow:  -3px -3px 3px 3px #4c27b3,
+                 3px 3px 3px 3px #c43b3b;
+    
+  }
+  .wrapper{
+    position: relative;
+    width: 350px;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .wrapper .icon{
+    font-size: 17px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0.7;
+    top: 15px;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    font-size: 16px;
+  }
+  .wrapper .icon i{
+    position: relative;
+    z-index: 9;
+  }
+  .wrapper .icon.arrow{
+    left:15px;
+  }
+  .wrapper .icon.dots{
+    right: 15px;
+  }
+  .wrapper .img-area{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .img-area .inner-area{
+    height: calc(100% - 25px);
+    width: calc(100% - 25px);
+    border-radius: 50%;
+  }
+  .inner-area img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .name{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 23px;
+    margin: 10px 0 5px 0;
+    color: white;
+    text-align: center;
+  }
+  .wrapper .social-icons{
+    margin: 15px 0 25px 0;
+  }
+  
+  .container nav ul  {
+    border-radius: 50% ;
+    width: 100%;
+    max-width: 1200px;
+    font-style: none; 
+  }
+
+  .social-icons a i{
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+  }
+
+  .wrapper .social-share{
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 5px;
+    justify-content: space-between;
+  }
+  .social-share .row::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 2px;
+    background: #e0e6eb;
+    margin-left: -25px;
+  }
+  .row:first-child::before{
+    background: none;
+  }
+  .social-share .row i.icon-2{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    color: #31344b;
+    transform: translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  .row:nth-child(1):hover i.fa-heart,
+  .row:nth-child(2):hover i.fa-comment{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  button a{
+    color: rgb(255, 255, 255);
+  }
+
+  .wrapper .buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .buttons button{
+    position: relative;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    color: #31344b;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 4;
+  }
+  .buttons button:first-child{
+    margin-right: 10px;
+  }
+  .buttons button:last-child{
+    margin-left: 10px;
+  }
+  .container nav ul button  {
+    display: inline-block;
+    display: grid;
+      place-items: center;
+      background: transparent;
+      color: #fff;
+      width: 280px;
+      height: 50px;
+      border-radius: 30px;
+      border: 2px solid white;
+      font-size: 16px;
+      font-weight: normal;
+      font-family: 'Roboto', sans-serif;
+      margin: 1rem 0;
+      transition: all 0.4s;
+      a:link{text-decoration:none;}
+      a:visited{text-decoration:none;}
+      a:hover{text-decoration:none;}
+  }
+  .container nav ul button:hover {
+    background-color: rgb(212, 97, 97);
+    transform: scale(1.1);
+    transition: all 0.4s;
+  }
+  
+  #backgroundVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* Mulai dengan video tersembunyi */
+    z-index:-1;
+}
+
+/* Styling untuk kontainer form dan tombol */
+#authContainer {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1000; /* Pastikan berada di atas elemen lain */
+}
+
+
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Styling untuk efek transisi pada tombol login dan sign in */
+.auth-buttons button {
+  background-color: transparent;
+  color: #fff;
+  border: 3px solid;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.auth-buttons button:hover {
+  background-color: #333;
+  transform: scale(1.05); /* Perbesar tombol saat hover */
+}
+
+.auth-buttons button:active {
+  transform: scale(0.95); /* Perkecil tombol saat ditekan */
+}
+
+/* Styling untuk form login dan sign in */
+.auth-forms {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0; /* Mulai dengan form tidak terlihat */
+  transform: translateY(-20px); /* Mulai dengan form terangkat */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.auth-forms.show {
+  display: flex; /* Tampilkan form */
+  opacity: 1; /* Jadikan form terlihat */
+  transform: translateY(0); /* Gerakkan form ke posisi normal */
+}
+.auth-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px; /* Atur lebar sesuai kebutuhan */
+}
+
+.auth-form h2 {
+  margin-bottom: 15px;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.auth-form button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.auth-form button:hover {
+  background-color: #333;
+}
+
